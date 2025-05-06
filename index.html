@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo - Cadastro</title>
+    <title>Página de Cadastro</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-
+    <link rel="icon" type="image/png" href="./images/cadastro.png">
+    
     <!-- Inclui a biblioteca SweetAlert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -17,12 +18,20 @@
     <form name="form1" action="gravar.php" method="post">
         <fieldset>
             <legend>Cadastro</legend>
-            <h2>Registro de aluno</h2>
+            <h2>Registro de alunos</h2>
+            <div class="input-box">
+                <span class="icon">
+                    <ion-icon name="qr-code"></ion-icon>
+                </span>
+                <input type="text" name="txtCode" placeholder="Insira o código de aluno" required>
+                <label>Código</label>
+            </div>
+
             <div class="input-box">
                 <span class="icon">
                     <ion-icon name="person"></ion-icon>
                 </span>
-                <input type="text" name="txtName" required>
+                <input type="text" name="txtName" placeholder="Digite o nome completo"  required>
                 <label>Nome</label>
             </div>
 
@@ -30,7 +39,7 @@
                 <span class="icon">
                     <ion-icon name="calendar"></ion-icon>                </span>
                 <input class="input-number" min="0" 
-                type="number" name="txtAge" required>
+                type="number" name="txtAge" placeholder="Insira a idade" required>
                 <label>Idade</label>
             </div>
 
@@ -38,32 +47,18 @@
                 <span class="icon">
                     <ion-icon name="mail"></ion-icon>
             </span>
-                <input type="email" name="txtEmail" required>
+                <input type="email" name="txtEmail" placeholder="Digite o e-mail do aluno" required>
                 <label>Email</label>
             </div>
-
+           
             <div class="input-box">
-                <span class="icon">
-                    <ion-icon name="lock-closed"></ion-icon>
+                <span id="toggle" class="icon" onclick="showHide()">
+                    <ion-icon id="icon-lock" name="lock-closed"></ion-icon>
                 </span>
-                <input type="password" name="txtPassword" required>
+                <input type="password" name="txtPassword" id="password" placeholder="Insira a senha" required>
                 <label>Senha</label>
-            </div>
-
-            <!-- <ion-icon name="lock-open"></ion-icon> -->
-
-            <!-- Código: <br />
-            <input type="number" min="0" name="txtCodigo"> <br />
-
-            Nome: <br />
-            <input type="text" name="txtName"> <br />
-
-            Idade: <br />
-            <input min="0" type="number" name="txtAge"> <br />
+            </div>            
             
-            Email: <br />
-            <input type="email" name="txtEmail"> <br />
-          -->
             <button type="submit" >Inserir Dados</button>
         </fieldset>
     </form>
