@@ -1,4 +1,5 @@
 <?php
+$codigo = $_REQUEST["txtCode"];
 $nome = $_REQUEST["txtName"];
 $idade = $_REQUEST["txtAge"];
 $email = $_REQUEST["txtEmail"];
@@ -6,8 +7,10 @@ $senha = $_REQUEST["txtPassword"];
 
 include "conexao.php";
 
-$sql = "INSERT INTO aluno (nome, idade, email, senha) VALUES (:nome, :idade, :email, :senha)";
+$sql = "INSERT INTO aluno (codigo, nome, idade, email, senha) VALUES (:codigo,:nome, :idade, :email, :senha)";
 $stm = $conexao->prepare($sql);
+
+$stm->bindValue(':codigo', $codigo);
 $stm->bindValue(':nome', $nome);
 $stm->bindValue(':idade', $idade);
 $stm->bindValue(':email', $email);
