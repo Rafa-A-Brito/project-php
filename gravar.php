@@ -3,7 +3,7 @@ $codigo = $_REQUEST["txtCode"];
 $nome = $_REQUEST["txtName"];
 $idade = $_REQUEST["txtAge"];
 $email = $_REQUEST["txtEmail"];
-$senha = $_REQUEST["txtPassword"];
+$senha = password_hash($_REQUEST["txtPassword"], PASSWORD_DEFAULT);
 
 include "conexao.php";
 
@@ -18,7 +18,6 @@ $stm->bindValue(':senha', $senha);
 
 $resultado = $stm->execute();
 
-// Agora envolve em HTML
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
