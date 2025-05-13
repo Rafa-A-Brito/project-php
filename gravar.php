@@ -31,15 +31,15 @@ $resultado = $stm->execute();
 <?php
 if ($resultado) {
     echo '<script>
-        Swal.fire({
-            title: "Sucesso!",
-            text: "Dados gravados com sucesso!!!",
-            icon: "success",
-            confirmButtonText: "OK"
-        }).then(() => {
+    Swal.fire({
+    title: "Sucesso!",
+    text: "Dados gravados com sucesso!",
+    icon: "success"
+    }.then(() => {
             window.location.href = "index.html";
         });
-    </script>';
+
+</script>';
 } else {
     echo '<script>
         Swal.fire({

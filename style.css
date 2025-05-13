@@ -44,25 +44,6 @@ h2 {
     text-align: center;
 }
 
-/* header {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  .logo {
-    color: white;
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  
-  .logo span {
-    color: #69dbd0;
-    text-shadow: 0 0 10px #69dbd0;
-  } */
-
 .input-box{
     position: relative;
     width: 310px;
