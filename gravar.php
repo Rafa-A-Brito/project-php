@@ -25,33 +25,35 @@ $resultado = $stm->execute();
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <title>Processando...</title>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
+    
 <?php
 if ($resultado) {
     echo '<script>
     Swal.fire({
-    title: "Sucesso!",
-    text: "Dados gravados com sucesso!",
-    icon: "success"
-    }.then(() => {
-            window.location.href = "index.html";
-        });
-
-</script>';
+        title: "Sucesso!",
+        text: "Dados gravados com sucesso!",
+        icon: "success",
+        confirmButtonText: "OK",
+    }).then(() => {
+        window.location.href = "index.html";
+    });
+    </script>';
 } else {
     echo '<script>
-        Swal.fire({
-            title: "Erro!",
-            text: "Falha ao gravar os dados.",
-            icon: "error",
-            confirmButtonText: "Tentar Novamente"
-        }).then(() => {
-            window.location.href = "index.html";
-        });
+    Swal.fire({
+        title: "Erro!",
+        text: "Falha ao gravar os dados.",
+        icon: "error",
+        confirmButtonText: "Tentar Novamente",
+    }).then(() => {
+        window.location.href = "index.html";
+    });
     </script>';
 }
 ?>
+
+
 </body>
 </html>
